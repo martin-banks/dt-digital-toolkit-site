@@ -71,6 +71,10 @@ class NewsMapEditorPage extends Component {
     this.updateTitle = this.updateTitle.bind(this)
     this.updateTitle = this.updateTitle.bind(this)
     this.updateIntro = this.updateIntro.bind(this)
+    this.updateMapLat = this.updateMapLat.bind(this)
+    this.updateMapLng = this.updateMapLng.bind(this)
+
+    this.updateContent = this.updateContent.bind(this)
   }
 
   storeContent () {
@@ -79,7 +83,7 @@ class NewsMapEditorPage extends Component {
       this.setState({ content: window.mapContent })
       console.log('content saved', this.state)
     } else {
-      setTimeout(this.storeContent, 3000)
+      setTimeout(this.storeContent, 100)
     }
   }
 
@@ -95,9 +99,26 @@ class NewsMapEditorPage extends Component {
     this.setState({ content })
     window.mapContent = this.state.content
   }
-
-
-
+  updateMapLat (e) {
+    const { content } = this.state
+    content.mapConfig.map.coords[0] = e.target.value
+    this.setState({ content })
+    window.mapContent = this.state.content
+  }
+  updateMapLng (e) {
+    const { content } = this.state
+    content.mapConfig.map.coords[1] = e.target.value
+    this.setState({ content })
+    window.mapContent = this.state.content
+  }
+  updateContent (type, e) {
+    console.log(arguments)
+    console.log({ e }, type.target)
+    const { content } = this.state
+    content.mapConfig.map.coords[1] = e.target.value
+    this.setState({ content })
+    window.mapContent = this.state.content
+  }
 
   componentDidMount () {
     this.storeContent()
@@ -109,38 +130,64 @@ class NewsMapEditorPage extends Component {
       head.appendChild(appScript)
     }, 1000)
   }
+
   render () {
     return <>
       <Layout>
         <SEO title="News Map editor" />
 
         <PageContent>
-          <form>
-            <h1>News map editor</h1>
-            <Label>Title</Label>
-            <Input
-              placeholder="Enter a main title"
-              value={ 
-                this.state.content
-                  ? this.state.content.header.title
-                  : '---'
-              }
-              onChange={ this.updateTitle }
-             />
-            <Label>Introduction</Label>
-            <TextArea
-              placeholder="Enter an introduction"
-              rows="5"
-              value={ 
-                this.state.content
-                  ? this.state.content.header.intro
-                  : '---'
-               }
-               onChange={ this.updateIntro }
-            />
+          {
+            this.state.content ? 
+            <form>
+              <h1>News map editor</h1>
+              <Label>Title</Label>
+              <Input
+                placeholder="Enter a main title"
+                value={ 
+                  this.state.content
+                    ? this.state.content.header.title
+                    : '---'
+                }
+                onChange={ this.updateTitle }
+              />
+              <Label>Introduction</Label>
+              <TextArea
+                placeholder="Enter an introduction"
+                rows="5"
+                value={ 
+                  this.state.content
+                    ? this.state.content.header.intro
+                    : '---'
+                }
+                onChange={ this.updateIntro }
+              />
+              <hr/>
 
-            <hr/>
-          </form>
+              <h4>Map options</h4>
+
+              <Label>Coords Lat</Label>
+              <Input value={ this.state.content.mapConfig.map.coords[0] } onChange={ this.updateMapLat } />
+              <Label>Coords Lng</Label>
+              <Input value={ this.state.content.mapConfig.map.coords[1] } onChange={ this.updateMapLng } />
+
+              <hr/>
+
+              <h4>Markers</h4>
+                {
+                  this.state.content.mapConfig.map.markers.map((m, i) => (
+                    <div>
+                      <Label>Marker title - { i }</Label>
+                      <Input value={ m.popup.title } onChange={ this.updateContent.bind(null, 'title') } />
+                      <Label>Marker caption - { i }</Label>
+                      <TextArea value={ m.popup.caption } rows="5" onChange={ this.updateContent.bind(null, 'caption') } />
+                    </div>
+                  ))
+                }
+              <hr />
+            </form>
+            : <p>Loading content...</p>
+          }
 
           <EmbedPreview>
             <div id="app_dna-news-map"></div>
@@ -165,7 +212,6 @@ class NewsMapEditorPage extends Component {
 
 
         </PageContent>
-
 
 
         { !this.state.content && <Loading /> }
