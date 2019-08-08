@@ -7,6 +7,8 @@
 
 import React, { Component } from "react"
 import { usePageQuery, graphql } from "gatsby"
+import Layout from './layout'
+require("prismjs/themes/prism-okaidia.css")
 
 
 class FakeComponent extends Component {
@@ -18,10 +20,13 @@ class FakeComponent extends Component {
     const { markdownRemark } = this.props.data
 
     return (<>
-      <h1>{ markdownRemark.frontmatter.title }</h1>
-      <div dangerouslySetInnerHTML={{
-        __html: markdownRemark.html
-      }} />
+      <Layout>
+        {/* <h1>{ markdownRemark.frontmatter.title }</h1> */}
+        <div dangerouslySetInnerHTML={{
+          __html: markdownRemark.html
+        }} />
+
+      </Layout>
 
     </>)
   }
