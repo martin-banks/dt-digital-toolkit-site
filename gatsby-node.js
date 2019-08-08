@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
     }`).then(results => {
       results.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-          path: node.frontmatter.slug,
+          path: `/guides${node.frontmatter.slug}`,
           component: path.resolve('./src/components/fake-component.js'),
           context: {
             slug: node.frontmatter.slug
