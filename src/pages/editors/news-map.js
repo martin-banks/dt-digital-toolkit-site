@@ -60,7 +60,7 @@ const Loading = styled.div`
 `
 
 
-class Page extends Component {
+class NewsMapEditorPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -154,6 +154,8 @@ class Page extends Component {
                 <script type="text/javascript"
                   src="http://martins-mbp.news.newslimited.local:7777/static/js/vendor.js"></script>
                   
+                  {/* This file is added dynamicaly on render to resolve unknown errors */}
+                  {/* // TODO What find more elegant soliution to loading error; async issue? */}
                 {/* <script type="text/javascript"
                   src="http://martins-mbp.news.newslimited.local:7777/static/js/app.js"></script> */}
               </Helmet>
@@ -167,8 +169,6 @@ class Page extends Component {
 
 
         { !this.state.content && <Loading /> }
-        
-
 
       </Layout>
     </>
@@ -177,4 +177,4 @@ class Page extends Component {
 }
 
 
-export default Page
+export default NewsMapEditorPage

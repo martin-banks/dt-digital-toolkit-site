@@ -33,6 +33,19 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      // DOCS https://www.gatsbyjs.org/packages/gatsby-source-filesystem/?=filesystem
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'guides',
+        path: `${__dirname}/src/guides`,
+        ignore: []
+      },
+    },
+    {
+      // DOCS https://www.gatsbyjs.org/packages/gatsby-transformer-remark/?=transformer
+      resolve: 'gatsby-transformer-remark',
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
