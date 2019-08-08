@@ -9,34 +9,54 @@ import SEO from "../../components/seo"
 
 
 const PageContent = styled.section`
-  box-sizing: border-box
+  box-sizing: border-box;
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 2fr;
 `
 const EmbedPreview = styled.div`
-  outline: solid 1px pink
+  // outline: solid 1px pink
+  padding: 1rem;
+  background: #fff;
 `
 const Input = styled.input`
-  box-sizing: border-box
-  display: block
-  font-size: 1rem
-  margin-bottom: 1rem
-  padding: 0.5rem
-  width: 100%
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
 `
 const TextArea = styled.textarea`
-  box-sizing: border-box
-  display: block
-  font-size: 1rem
-  margin-bottom: 1rem
-  padding: 0.5rem
-  width: 100%
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
 `
 const Label = styled.label`
-  box-sizing: border-box
-  display: block
-  font-size: 1rem
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+`
+const Loading = styled.div`
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  background: rgba(0,0,0, 0.6);
+  color: white;
+  font-size: 2rem;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  padding-top: 30vh;
+  top: 0;
+  text-align: center;
+  width: 100vw;
+  z-index: 9999;
+  &:before {
+    content: 'Loading...';
+  }
 `
 
 
@@ -143,6 +163,11 @@ class Page extends Component {
 
 
         </PageContent>
+
+
+
+        { !this.state.content && <Loading /> }
+        
 
 
       </Layout>
