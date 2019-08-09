@@ -16,6 +16,9 @@ export default class extends Component {
             <Link to={ '/' }>Home</Link>
           </li>
           <li>
+            <Link to={ '/dt-archive' }>DT Archive</Link>
+          </li>
+          <li>
             <Link to={ '/guides' }>Guides</Link>
           </li>
           <li>
