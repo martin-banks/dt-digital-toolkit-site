@@ -8,9 +8,13 @@
 import React, { Component } from "react"
 import { usePageQuery, graphql, Link } from "gatsby"
 import Styled from 'styled-components'
+import importAllImages from '../helpers/import-all-images'
 
 import Layout from './layout'
+
 require("prismjs/themes/prism-okaidia.css")
+
+const images = importAllImages(require.context('../screengrabs', false, /\.png/))
 
 
 const PreviewButton = Styled.button`
@@ -24,6 +28,7 @@ const PreviewButton = Styled.button`
 `
 
 
+
 class FakeComponent extends Component {
   constructor (props) {
     super(props)
@@ -34,12 +39,14 @@ class FakeComponent extends Component {
 
     return (<>
       <Layout>
+        <img src={ images[markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/g, '-')] } />
         <h1>{ markdownRemark.frontmatter.title }</h1>
         {/* <h1>{ markdownRemark.frontmatter.title }</h1>
         <div dangerouslySetInnerHTML={{
           __html: markdownRemark.html
         }} /> */}
 
+        {/* <img src={ images`/${images[`${markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/gi, '-')}.png`]}` } /> */}
         <a href={ markdownRemark.frontmatter.preview } target="_blank" >
           <PreviewButton>
             Preview
