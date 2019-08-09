@@ -65,6 +65,7 @@ class NewsMapEditorPage extends Component {
     super(props)
     this.state = {
       content: null,
+      loadingCount: 0,
     }
 
     this.storeContent = this.storeContent.bind(this)
@@ -79,6 +80,12 @@ class NewsMapEditorPage extends Component {
 
   storeContent () {
     console.log('checking for content...')
+    if (this.state.loadingCount > 10) {
+      return
+    }
+    this.setState({
+      loadingCount: (this.state.loadingCount + 1)
+    })
     if (window.mapContent) {
       this.setState({ content: window.mapContent })
       console.log('content saved', this.state)
