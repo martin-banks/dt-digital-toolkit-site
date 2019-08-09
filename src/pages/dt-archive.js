@@ -40,14 +40,10 @@ const Guides = () => {
       <Layout>
         <h1>DT Archive</h1>
 
-        <aside>
-
-        </aside>
-
         <ul>
           { data.allMarkdownRemark.edges.map((e, i) => (
             <li key={`archive-project-${i}`}>
-              <Link to={ `guides/${e.node.frontmatter.slug}` }>{ e.node.frontmatter.title }</Link>
+              <Link to={ `dt-archive${e.node.frontmatter.slug}` }>{ e.node.frontmatter.title }</Link>
             </li>
           )) }
         </ul>

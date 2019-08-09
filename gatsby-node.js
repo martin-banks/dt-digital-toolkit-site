@@ -42,8 +42,8 @@ exports.createPages = ({ graphql, actions }) => {
       results.data.allMarkdownRemark.edges.forEach(({ node }) => {
         // DT cotent archive
         createPage({
-          path: `/archive${node.frontmatter.slug}`,
-          component: path.resolve('./src/components/fake-component.js'),
+          path: `/dt-archive${node.frontmatter.slug}`,
+          component: path.resolve('./src/components/project-detail.js'),
           context: {
             slug: node.frontmatter.slug,
             metadata: node.frontmatter,
