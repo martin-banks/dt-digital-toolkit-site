@@ -27,17 +27,36 @@ exports.createPages = ({ graphql, actions }) => {
             frontmatter {
               title
               slug
+              bylines
+              capi
+              date
+              description
+              preview
+              tech
+              thumb
             }
           }
         }
       }
     }`).then(results => {
       results.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        // DT cotent archive
+        createPage({
+          path: `/archive${node.frontmatter.slug}`,
+          component: path.resolve('./src/components/fake-component.js'),
+          context: {
+            slug: node.frontmatter.slug,
+            metadata: node.frontmatter,
+          },
+        })
+
         createPage({
           path: `/guides${node.frontmatter.slug}`,
           component: path.resolve('./src/components/fake-component.js'),
           context: {
-            slug: node.frontmatter.slug
+            slug: node.frontmatter.slug,
+            timeToRead: node.timeToRead,
+            metadata: node.frontmatter,
           },
         })
       })

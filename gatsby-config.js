@@ -43,6 +43,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'dt-archive',
+        path: `${__dirname}/src/dt-archive`,
+        ignore: []
+      },
+    },
+    {
       // DOCS https://www.gatsbyjs.org/packages/gatsby-transformer-remark/?=transformer
       resolve: 'gatsby-transformer-remark',
       options: {
