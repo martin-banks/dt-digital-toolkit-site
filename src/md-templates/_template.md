@@ -7,5 +7,5 @@ preview: ''
 slug: ''
 tech: ''
 thumb: ''
-title: ''
+title: 'template'
 ---
