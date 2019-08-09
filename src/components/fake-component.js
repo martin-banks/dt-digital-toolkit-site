@@ -26,6 +26,10 @@ class FakeComponent extends Component {
           __html: markdownRemark.html
         }} />
 
+        <pre>{
+          JSON.stringify(this.props.data, 'utf8', 2)
+        }</pre>
+
       </Layout>
 
     </>)
@@ -44,6 +48,13 @@ export const query = graphql`
       frontmatter {
         title
         slug
+        bylines
+        capi
+        date
+        description
+        preview
+        tech
+        thumb
       }
     }
   }
