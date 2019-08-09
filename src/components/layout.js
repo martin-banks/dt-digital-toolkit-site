@@ -20,7 +20,7 @@ const Content = Styled.div`
   grid-template-columns: 200px 1fr;
   background: #e2e2e2;
   margin: 0 auto;
-  max-width: 1200px;
+  // max-width: 1200px;
 
 `
 
