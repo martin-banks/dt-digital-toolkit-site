@@ -27,6 +27,19 @@ const PreviewButton = Styled.button`
   font-weight: 600;
 `
 
+const Image = Styled.img`
+  // max-width: 400px;
+  width: auto;
+  max-height: 500px;
+  maring: 0 auto;
+`
+
+const Display = Styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center ;
+`
+
 
 
 class FakeComponent extends Component {
@@ -39,8 +52,10 @@ class FakeComponent extends Component {
 
     return (<>
       <Layout>
-        <img src={ images[markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/g, '-')] } />
-        <h1>{ markdownRemark.frontmatter.title }</h1>
+        <Display>
+          <Image src={ images[markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/g, '-')] } />
+        </Display>
+          <h1>{ markdownRemark.frontmatter.title }</h1>
         {/* <h1>{ markdownRemark.frontmatter.title }</h1>
         <div dangerouslySetInnerHTML={{
           __html: markdownRemark.html

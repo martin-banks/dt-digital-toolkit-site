@@ -14,8 +14,6 @@ const ProjectGrid = Styled.div`
 `
 
 const Project = Styled.div`
-  outline; solid 2px purple;
-  outline: solid 1px pink;
   max-width: 200px;
   & > img {
     width: 100%;
