@@ -38,11 +38,19 @@ async function wait () {
         }
       )
       const previewUrl = frontMatter(fileContent.toString()).attributes.preview
+
+      const slug = frontMatter(fileContent.toString())
+        .attributes
+        .slug
+        .toLowerCase()
+        .replace(/\//gi, '')
+
       const title = frontMatter(fileContent.toString())
        .attributes
        .title
        .toLowerCase()
        .replace(/\s+/g, '-')
+
       const page = await browser.newPage()
       page.setViewport({
         width: 650,
@@ -56,7 +64,7 @@ async function wait () {
 
       await wait()
       console.log('waited... ', title)
-      await page.screenshot({ path: `../src/screengrabs/${title}.png`})
+      await page.screenshot({ path: `./src/screengrabs/${slug}.png`})
       await browser.close()
     } catch (err) {
       console.log({ err })
