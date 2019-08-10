@@ -18,7 +18,7 @@ import "./layout.css"
 const Content = Styled.div`
   display: grid;
   grid-template-columns: 200px 1fr;
-  background: #e2e2e2;
+  // background: #e2e2e2;
   margin: 0 auto;
   // max-width: 1200px;
 
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
           style={{
             // margin: `0 auto`,
             // maxWidth: 1200,
-            padding: `0px 1.0875rem 1.45rem`,
+            padding: `2rem`,
             paddingTop: 0,
           }}
         >

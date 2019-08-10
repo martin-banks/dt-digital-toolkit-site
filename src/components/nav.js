@@ -1,6 +1,28 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import Styled from 'styled-components'
 import { Link } from 'gatsby'
+
+const Nav = Styled.nav`
+  // background: #333;
+  & a {
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      // color: #eee;
+    };
+  };
+  & ul {
+    padding: 0;
+    margin: 0;
+  };
+  & li {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    &:hover {
+      background: #ccc;
+    }
+  };
+`
 
 
 export default class extends Component {
@@ -10,22 +32,14 @@ export default class extends Component {
 
   render () {
     return (<>
-      <nav>
+      <Nav>
         <ul>
-          <li>
-            <Link to={ '/' }>Home</Link>
-          </li>
-          <li>
-            <Link to={ '/dt-archive' }>DT Archive</Link>
-          </li>
-          <li>
-            <Link to={ '/guides' }>Guides</Link>
-          </li>
-          <li>
-            <Link to={ '/editors/news-map' }>News Map editor</Link>
-          </li>
+          <Link to={ '/' }><li>Home</li></Link>
+          <Link to={ '/dt-archive' }><li>DT Archive</li></Link>
+          <Link to={ '/guides' }><li>Guides</li></Link>
+          {/* <Link to={ '/editors/news-map' }><li>News Map editor</li></Link> */}
         </ul>
-      </nav>
+      </Nav>
     
     </>)
   }
