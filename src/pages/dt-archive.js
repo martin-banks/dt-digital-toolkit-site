@@ -11,16 +11,39 @@ const ProjectGrid = Styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
   gap: 0.5rem;
+  overflow: visible;
 `
 
 const Project = Styled.div`
-  outline; solid 2px purple;
-  outline: solid 1px pink;
+  background: rgba(140,150,180, 0);
   max-width: 200px;
-  & > img {
-    width: 100%;
-    height: auto;
+  overflow: visible;
+  padding: 0.5rem;
+  transition: all 200ms;
+  z-index: 1;
+  & a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
   }
+  & img {
+    box-shadow: 0 0px 0px rgba(0,0,0, 0.6);
+    height: auto;
+    width: 100%;
+    transform-origin: center bottom;
+    transition: all 150ms;
+  };
+  &:hover {
+    background: rgba(140,150,180, 0.3);
+    & * {
+      // color: darkslategrey;
+    };
+    & img {
+      transform: scale(1.1);
+      box-shadow: 0 2px 16px rgba(0,0,0, 0.4);
+      z-index: 2;
+    };
+  };
 `
 
 
