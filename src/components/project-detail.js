@@ -49,27 +49,40 @@ class FakeComponent extends Component {
 
   render () {
     const { markdownRemark } = this.props.data
+    const { frontmatter } = markdownRemark
 
     return (<>
       <Layout>
         <Display>
-          <Image src={ images[markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/g, '-')] } />
+          <Image src={
+            images[frontmatter
+              .slug
+              .toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/\//gi, '')
+            ]
+          } />
         </Display>
-          <h1>{ markdownRemark.frontmatter.title }</h1>
-        {/* <h1>{ markdownRemark.frontmatter.title }</h1>
-        <div dangerouslySetInnerHTML={{
-          __html: markdownRemark.html
-        }} /> */}
+          <h1>{ frontmatter.title }</h1>
+          <p><b>CAPI Id:</b> { frontmatter.capi }</p>
+          { frontmatter.tech && <p>{ frontmatter.tech }</p> }
+          { frontmatter.description && <p>{ frontmatter.description }</p> }
+          { frontmatter.bylines && <p>{ frontmatter.bylines }</p> }
+          
 
-        {/* <img src={ images`/${images[`${markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/gi, '-')}.png`]}` } /> */}
-        <a href={ markdownRemark.frontmatter.preview } target="_blank" >
-          <PreviewButton>
-            Preview
-          </PreviewButton>
-        </a>
+          {/* <h1>{ markdownRemark.frontmatter.title }</h1>
+          <div dangerouslySetInnerHTML={{
+            __html: markdownRemark.html
+          }} /> */}
 
+          {/* <img src={ images`/${images[`${markdownRemark.frontmatter.title.toLowerCase().replace(/\s+/gi, '-')}.png`]}` } /> */}
+        {
+         frontmatter.preview &&
+          <a href={ frontmatter.preview } target="_blank" >
+            <PreviewButton>Preview</PreviewButton>
+          </a>
+        }
         <hr />
-
         <pre>{
           JSON.stringify(this.props.data, 'utf8', 2)
         }</pre>

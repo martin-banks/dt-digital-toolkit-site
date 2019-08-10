@@ -18,13 +18,18 @@ class FakeComponent extends Component {
 
   render () {
     const { markdownRemark } = this.props.data
+    console.log('fake', this.props)
 
     return (<>
       <Layout>
+        <h2>something fake</h2>
         {/* <h1>{ markdownRemark.frontmatter.title }</h1> */}
-        <div dangerouslySetInnerHTML={{
-          __html: markdownRemark.html
-        }} />
+        {/* {
+          markdownRemark.html &&
+            <div dangerouslySetInnerHTML={{
+              __html: markdownRemark.html
+            }} />
+        } */}
 
         <pre>{
           JSON.stringify(this.props.data, 'utf8', 2)
@@ -44,7 +49,6 @@ export const query = graphql`
         eq: $slug
       }
     }) {
-      html
       frontmatter {
         title
         slug
