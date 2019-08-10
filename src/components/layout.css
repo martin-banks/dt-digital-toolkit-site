@@ -16,7 +16,7 @@ html, body {
 
 * {
   box-sizing: border-box;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 table {
@@ -52,6 +52,19 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+hr {
+  margin: 3rem 0;
+}
+
+pre {
+  background: #333;
+  color: #bada55;
+  display: block;
+  padding: 2rem;
+  overflow: auto;
+  width: 100%;
 }
 
 
