@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+// import Styled from 'styled-components'
 
 import Layout from '../components/layout'
 
@@ -8,47 +8,51 @@ import Layout from '../components/layout'
 const Guides = () => {
   const data = useStaticQuery(graphql`
     query allMarkdownFiles {
-  allMarkdownRemark(filter: {
-    fileAbsolutePath: {
-      regex: "/guides/"
-    }
-  }){
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          slug
+      allMarkdownRemark(filter: {
+        fileAbsolutePath: {
+          regex: "/guides/"
+        }
+      }){
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              slug
+            }
+          }
         }
       }
     }
-  }
-}
   `)
 
   return (
     <>
-      <Layout>
-        <h1>Guides</h1>
+      <h1>Guides</h1>
 
-        <aside>
+      {/* <aside></aside> */}
 
-        </aside>
-
-        <ul>
-          { data.allMarkdownRemark.edges.map((e, i) => (
+      <ul>
+        { data.allMarkdownRemark.edges.map((e, i) => (
+          <div>
             <li key={`link-${i}`}>
-              <Link to={ `guides/${e.node.frontmatter.slug}` }>{ e.node.frontmatter.title }</Link>
+
+            <p>blah</p>
+            <p>blah</p>
+              {/* <Link to={ `guides/${e.node.frontmatter.slug}` }>{
+                e.node.frontmatter.title
+              }</Link> */}
             </li>
-          )) }
-        </ul>
 
-        {/* <pre>
-          { JSON.stringify(data.allFile.edges, 'utf8', 2) }
-        </pre> */}
+          </div>
+        )) }
+      </ul>
+
+      {/* <pre>
+        { JSON.stringify(data.allFile.edges, 'utf8', 2) }
+      </pre> */}
 
 
-      </Layout>
     </>
   )
 }
