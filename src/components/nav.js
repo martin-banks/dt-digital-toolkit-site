@@ -36,6 +36,7 @@ export default class extends Component {
         <ul>
           <Link to={ '/' }><li>Home</li></Link>
           <Link to={ '/dt-archive' }><li>DT Archive</li></Link>
+          <Link to={ '/dna-archive' }><li>DNA Archive</li></Link>
           <Link to={ '/guides' }><li>Guides</li></Link>
           {/* <Link to={ '/editors/news-map' }><li>News Map editor</li></Link> */}
         </ul>
