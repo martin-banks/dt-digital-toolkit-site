@@ -82,6 +82,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+h2, h3 {
+  border-bottom: solid 1px #cccccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 h1 {
   font-size: 3rem;
   line-height: 1;
@@ -89,7 +95,7 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   padding-top: 3rem;
 }
 
@@ -97,6 +103,17 @@ p {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+ul {
+  line-height: 1rem;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  /* padding-left: 0.5rem */
 }
 
 
