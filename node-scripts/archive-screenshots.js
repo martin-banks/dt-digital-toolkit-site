@@ -8,6 +8,8 @@ const blacklist = [
   '.DS_Store',
 ]
 
+const dir = 'dna-archive'
+
 async function wait () {
   return new Promise((resolve, reject) => {
     console.log('starting wait')
@@ -20,7 +22,7 @@ async function wait () {
 
 ;(async () => {
   const mdFiles = fs.readdirSync(
-    path.join(__dirname, '../src/dt-archive'),
+    path.join(__dirname, `../src/${dir}`),
     (err, files) => {
       if (err) return console.log('Error reading directory ->\n', err)
     }
@@ -32,7 +34,7 @@ async function wait () {
     const browser = await pup.launch()
     try {
       const fileContent = fs.readFileSync(
-        path.join(__dirname, `../src/dt-archive/${file}`),
+        path.join(__dirname, `../src/${dir}/${file}`),
         (err, content) => {
           if (err) throw err
         }

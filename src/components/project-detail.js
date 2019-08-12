@@ -37,7 +37,8 @@ const Image = Styled.img`
 const Display = Styled.div`
   display: flex;
   flex-wrap: wrap;
-  // justify-content: center ;
+  // justify-content: center;
+  margin-bottom: 1rem;
 `
 
 
