@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             timeToRead
+            html
             frontmatter {
               title
               slug
@@ -57,6 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
             slug: node.frontmatter.slug,
             timeToRead: node.timeToRead,
             metadata: node.frontmatter,
+            html: node.html
           },
         })
       })

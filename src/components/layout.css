@@ -12,6 +12,7 @@ body {
 html, body {
   box-sizing: border-box;
   font-size: 16px;
+  overflow: auto;
 }
 
 * {
@@ -62,9 +63,40 @@ pre {
   background: #333;
   color: #bada55;
   display: block;
+  font-size: 0.8rem !important;
   padding: 2rem;
   overflow: auto;
-  width: 100%;
+  /* width: 100%; */
+  max-width: 100%;
+  margin: 2rem 0 !important;
+}
+
+
+/* .gatsby-highlight, .gatsby-highlight * {
+  overflow: auto;
+  max-width: 100%;
+} */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 6rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  padding-top: 3rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 

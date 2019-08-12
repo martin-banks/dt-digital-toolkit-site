@@ -27,33 +27,20 @@ const Guides = () => {
   `)
 
   return (
-    <>
+    <Layout>
       <h1>Guides</h1>
-
-      {/* <aside></aside> */}
 
       <ul>
         { data.allMarkdownRemark.edges.map((e, i) => (
-          <div>
-            <li key={`link-${i}`}>
-
-            <p>blah</p>
-            <p>blah</p>
-              {/* <Link to={ `guides/${e.node.frontmatter.slug}` }>{
-                e.node.frontmatter.title
-              }</Link> */}
-            </li>
-
-          </div>
+          <li key={`link-${i}`}>
+            <Link to={ `guides/${e.node.frontmatter.slug}` }>{
+              e.node.frontmatter.title
+            }</Link>
+          </li>
         )) }
       </ul>
 
-      {/* <pre>
-        { JSON.stringify(data.allFile.edges, 'utf8', 2) }
-      </pre> */}
-
-
-    </>
+    </Layout>
   )
 }
 

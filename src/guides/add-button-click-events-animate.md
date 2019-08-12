@@ -3,9 +3,9 @@ slug: '/animate-click-events'
 title: 'How to auto-add click events to buttons in Adobe Animate CC'
 ---
 
-# Auto-add click events to buttons
+# How to auto-add click events to buttons in Adobe Animate CC
 
-*Platform*: Adobe Animate CC
+**Platform:** Adobe Animate CC
 
 Adding the same click event to multiple buttons is time consuming and introduces multiple points of failure where one typo hidden somewhere in one of multiple frames. 
 

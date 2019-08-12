@@ -20,8 +20,8 @@ const Content = Styled.div`
   grid-template-columns: 200px 1fr;
   // background: #e2e2e2;
   margin: 0 auto;
+  width: auto;
   max-width: 1400px;
-
 `
 
 const Layout = ({ children }) => {
@@ -46,6 +46,7 @@ const Layout = ({ children }) => {
             // maxWidth: 1200,
             padding: `2rem`,
             paddingTop: 0,
+            overflow: 'auto',
           }}
         >
           <main>{ children }</main>

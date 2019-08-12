@@ -11,16 +11,19 @@ const ProjectGrid = Styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   // gap: 0.1rem;
-  overflow: visible;
+  overflow: visible !important;
 `
 
 const Project = Styled.div`
-  background: rgba(140,150,180, 0);
-  overflow: visible;
+  // background: rgba(140,150,180, 0);
+  background: white
+  border: solid 1px #e2e2e2;
+  font-weight: 600;
+  overflow: visible !important;
   padding: 0.5rem;
+  transform-origin: center bottom;
   transition: all 200ms;
   z-index: 1;
-  font-weight: 600;
   & p {
     color: #333;
   }
@@ -28,15 +31,13 @@ const Project = Styled.div`
     // box-shadow: 0 0px 0px rgba(0,0,0, 0.6);
     height: auto;
     width: 100%;
-    transform-origin: center bottom;
     transition: all 150ms;
   };
   &:hover {
-    & img {
-      transform: scale(1.1);
-      // box-shadow: 0 2px 16px rgba(0,0,0, 0.4);
-      z-index: 2;
-    };
+    transform: scale(1.05);
+    box-shadow: 0 2px 16px rgba(0,0,0, 0.4);
+    z-index: 100;
+    & img {};
   };
 `
 
@@ -79,19 +80,19 @@ const Guides = () => {
 
   return (
     <>
-      <Layout>
+      <Layout style={{ overflow: 'visible' }}>
         <h1>DT Archive</h1>
 
         <ProjectGrid>
           {
             data.allMarkdownRemark.edges.map((e, i) => (
-              <Link style={{ textDecoration: 'none' }} to={`dt-archive${e.node.frontmatter.slug}`}>
-                <Project key={`archive-project-${i}`}>
+              <Project key={`archive-project-${i}`}>
+                <Link style={{ textDecoration: 'none' }} to={`dt-archive${e.node.frontmatter.slug}`}>
                   <img src={ images[e.node.frontmatter.slug.toLowerCase().replace(/\s+/g, '-').replace(/\//gi, '')] } />
                   <p>{e.node.frontmatter.title}</p>
                   <p>{ e.node.frontmatter.date }</p>
-              </Project>
-            </Link>
+              </Link>
+            </Project>
           ))
           }
         </ProjectGrid>
