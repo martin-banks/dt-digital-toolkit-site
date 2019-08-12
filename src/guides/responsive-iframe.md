@@ -27,13 +27,15 @@ Does not require any communication between the iFrame content and the parent it 
 [HTML Minifier](http://minifycode.com/html-minifier/)
 
 
-### Default sizes
+## Default sizes
 Current agreed spec is to design each mobile/desktop version to the sizes below and are responsive to other screen widths.
 
 Sizes only need to be updated in the embed code if the interactive deviates from this spec
 
-Desktop: 650 x 650 px
-Mobile: 450 x 650 px
+| Device | Width | Height |
+| --- | --- | --- |
+| Desktop | 650px | 650px |
+| Mobile | 450px | 650px |
 
 
 ```html
