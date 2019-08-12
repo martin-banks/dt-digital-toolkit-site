@@ -99,9 +99,9 @@ const Guides = () => {
           }
         </ProjectGrid>
 
-        <pre>
+        {/* <pre>
           { JSON.stringify(data.allMarkdownRemark, 'utf8', 2) }
-        </pre>
+        </pre> */}
 
 
       </Layout>
