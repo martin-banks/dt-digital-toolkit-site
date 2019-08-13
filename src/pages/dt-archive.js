@@ -4,42 +4,10 @@ import Styled from 'styled-components'
 import importAllImages from '../helpers/import-all-images'
 
 import Layout from '../components/layout'
+import Project from '../components/project-item'
+import ProjectGrid from '../components/project-grid'
 
 const images = importAllImages(require.context('../screengrabs', false, /\.png/))
-
-const ProjectGrid = Styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  // gap: 0.1rem;
-  overflow: visible !important;
-`
-
-const Project = Styled.div`
-  // background: rgba(140,150,180, 0);
-  background: white
-  border: solid 1px #e2e2e2;
-  font-weight: 600;
-  overflow: visible !important;
-  padding: 0.5rem;
-  transform-origin: center bottom;
-  transition: all 200ms;
-  z-index: 1;
-  & p {
-    color: #333;
-  }
-  & img {
-    // box-shadow: 0 0px 0px rgba(0,0,0, 0.6);
-    height: auto;
-    width: 100%;
-    transition: all 150ms;
-  };
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 2px 16px rgba(0,0,0, 0.4);
-    z-index: 100;
-    & img {};
-  };
-`
 
 
 const Guides = () => {
