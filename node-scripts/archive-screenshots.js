@@ -8,7 +8,7 @@ const blacklist = [
   '.DS_Store',
 ]
 
-const dir = 'dna-archive'
+const dir = 'new-md-files'
 
 async function wait () {
   return new Promise((resolve, reject) => {

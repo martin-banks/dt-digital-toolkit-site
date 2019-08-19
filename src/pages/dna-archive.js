@@ -56,7 +56,7 @@ const Guides = () => {
               .filter(e => e.node.frontmatter.slug)
               .map((e, i) => (
                   <Project key={`dna-archive-project-${i}`}>
-                    <Link style={{ textDecoration: 'none' }} to={`dna-archive/${e.node.frontmatter.slug}`}>
+                    <Link style={{ textDecoration: 'none' }} to={`dna-archive${e.node.frontmatter.slug}`}>
                       <img src={ images[e.node.frontmatter.slug.toLowerCase().replace(/\s+/g, '-').replace(/\//gi, '')] } />
                       <p>{e.node.frontmatter.title}</p>
                       <p>{ e.node.frontmatter.date }</p>

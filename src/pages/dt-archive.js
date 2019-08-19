@@ -54,8 +54,8 @@ const Guides = () => {
         <ProjectGrid>
           {
             data.allMarkdownRemark.edges.map((e, i) => (
-              <Project key={`archive-project-${i}`}>
-                <Link style={{ textDecoration: 'none' }} to={`dt-archive${e.node.frontmatter.slug}`}>
+              <Project key={`dt-archive-project-${i}`}>
+                <Link style={{ textDecoration: 'none' }} to={`/dt-archive${e.node.frontmatter.slug}`}>
                   <img src={ images[e.node.frontmatter.slug.toLowerCase().replace(/\s+/g, '-').replace(/\//gi, '')] } />
                   <p>{e.node.frontmatter.title}</p>
                   <p>{ e.node.frontmatter.date }</p>
