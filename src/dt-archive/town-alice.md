@@ -5,7 +5,7 @@ date: ''
 description: ''
 preview: 'https://onlyfuzz.com/DTinteractives/Alice/index.html'
 slug: '/town-like-alice'
-tech: ''
+tech: 'Adobe animate cc'
 thumb: ''
 title: 'A town like Alice'
 ---

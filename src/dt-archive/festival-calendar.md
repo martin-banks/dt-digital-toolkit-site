@@ -1,5 +1,5 @@
 ---
-bylines: ''
+bylines: 'Candy Luan, Fuzz Hamzah'
 capi: '332215da68fdea4d48795ce637974ba4'
 date: ''
 description: ''
