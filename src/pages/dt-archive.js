@@ -9,8 +9,7 @@ import ProjectGrid from '../components/project-grid'
 
 const images = importAllImages(require.context('../screengrabs', false, /\.png/))
 
-
-const Guides = () => {
+const dtArchive = () => {
   const data = useStaticQuery(graphql`
     query dtArchiveMarkdowns {
       allMarkdownRemark(
@@ -77,4 +76,4 @@ const Guides = () => {
 
 
 
-export default Guides
+export default dtArchive

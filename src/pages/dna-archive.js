@@ -9,7 +9,7 @@ import ProjectGrid from '../components/project-grid'
 
 const images = importAllImages(require.context('../screengrabs', false, /\.png/))
 
-const Guides = () => {
+const dnaArchive = () => {
   const data = useStaticQuery(graphql`
     query dnaArchiveMarkdowns {
       allMarkdownRemark(
@@ -78,4 +78,4 @@ const Guides = () => {
 
 
 
-export default Guides
+export default dnaArchive

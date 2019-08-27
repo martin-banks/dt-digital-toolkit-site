@@ -38,24 +38,24 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'guides',
-        path: `${__dirname}/src/guides`,
-        ignore: []
+        path: `${__dirname}/src/guides/`,
+        ignore: [`**/\.*`],
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'dt-archive',
-        path: `${__dirname}/src/dt-archive`,
-        ignore: []
+        path: `${__dirname}/src/dt-archive/`,
+        ignore: [`**/\.*`],
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'dt-archive',
-        path: `${__dirname}/src/dna-archive`,
-        ignore: []
+        name: 'dna-archive',
+        path: `${__dirname}/src/dna-archive/`,
+        ignore: [`**/\.*`],
       },
     },
     {

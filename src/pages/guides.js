@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 
 const Guides = () => {
   const data = useStaticQuery(graphql`
-    query allMarkdownFiles {
+    query guideMarkdowns {
       allMarkdownRemark(filter: {
         fileAbsolutePath: {
           regex: "/guides/"
