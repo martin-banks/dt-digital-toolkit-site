@@ -14,6 +14,7 @@ const Nav = Styled.nav`
   & ul {
     padding: 0;
     margin: 0;
+    list-style: none;
   };
   & li {
     padding: 0.5rem 1rem;
@@ -34,14 +35,16 @@ export default class extends Component {
     return (<>
       <Nav>
         <ul>
-          <Link to={ '/' }><li>Home</li></Link>
+          {/* <Link to={ '/' }><li>Home</li></Link> */}
           <Link to={ '/dt-archive' }><li>DT Archive</li></Link>
           <Link to={ '/dna-archive' }><li>DNA Archive</li></Link>
           <Link to={ '/guides' }><li>Guides</li></Link>
+          <hr />
+
+          <a href={ 'https://dt-cardkit-demo-05d3a6.netlify.com' }><li>Simple artwork tool</li></a>
           {/* <Link to={ '/editors/news-map' }><li>News Map editor</li></Link> */}
         </ul>
       </Nav>
-    
     </>)
   }
 
